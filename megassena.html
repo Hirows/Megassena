@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aula sobre Switch</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  background-color: #ddd;
+  padding: 10px;
+  height: 400px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.8em;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="#">Home</a>
+  <a href="#">Quem Somos</a>
+  <a href="#">Fale Conosco</a>
+</div>
+
+<div class="content">
+  <h2>Lanchonete da ETEC Cafelândia</h2>
+  <p>Seja bem vindo, </p> <br>
+  <form>
+    <label>Escolha um produto:</label><br>
+    <select id='fCardapio'>
+        <option value="">Selecione um produto</option>
+        <option value="100">Cachorro quente</option>
+        <option value="101">Bauru simples</option>
+        <option value="102">Bauru com ovo</option>
+        <option value="103">Hambúrguer</option>
+        <option value="104">Cheeseburguer</option>
+        <option value="105">Refrigerante</option>
+        </select><br><br> 
+
+    <label>Digite a quantidade:</label><br>
+    <input id= "fQuantidade" type="text"/><br>
+  </form>
+  <br><br>
+  <button onclick="calcularValor()">Calcular</button><br>
+  <p id='resultado'> </p>
+</div>
+
+<div class="footer">
+  <p>Aula de PA - Etec Cafelância</p>
+</div>
+
+<script>
+  function calcularValor(){
+    let cardapio = document.getElementById('fCardapio').value
+    let quantidade = Number(document.getElementById( 'fQuantidade').value)
+    
+    switch(cardapio){
+    case '100':
+    var TotalAPagar= 5.20 * quantidade
+    break
+    
+    case '101':
+    var TotalAPagar= 5.30 * quantidade
+    break
+    
+    case '102':
+    var TotalAPagar= 5.50 * quantidade
+    break
+    
+    case '103':
+    var TotalAPagar= 5.20 * quantidade
+    break
+    
+    case '104':
+    var TotalAPagar= 5.3 * quantidade
+    break
+    
+    case '105':
+    var TotalAPagar= 5.00 * quantidade
+    break
+    
+    default:
+    alert('Por favor, escolha um produto!')
+    break
+    }
+if ( quantidade == 0 || Number . isNaN ( quantidade )){
+      alert('Por favor, insira a quantidade')
+    }
+    document.getElementById("resultado").innerHTML= `Valor total a pagar: R$${TotalAPagar}.`
+  }
+</script>
+</body>
+</html>
